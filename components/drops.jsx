@@ -21,23 +21,25 @@ const Drop = (prop) => {
 
         if (dropTop < 750 && prop.gameState === 'true'){
         setDropTop(dropTop + 50)}}, prop.speed)
-        if (prop.leftPosition === dropLeft && dropTop === 700 && prop.gameState === 'true'){
-            prop.setGameState('false')
+
+    
+    if (prop.leftPosition === dropLeft && dropTop === 700 && prop.gameState === 'true'){
+        prop.setGameState('false')
             
-            setTimeout(() =>{
+        setTimeout(() =>{
                 
-                fetch("/api/gameover", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
+        fetch("/api/gameover", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
                       },
-                    body: JSON.stringify({name: prop.user, score: prop.score})})
-                    .then((response) => response.json())
+                body: JSON.stringify({name: prop.user, score: prop.score})})
+                .then((response) => response.json())
                 
-                if(confirm("GAME OVER! Play again?")){
+            if(confirm("GAME OVER! Play again?")){
                     resetGame();
                     }
-                },prop.speed/2)    
+             },prop.speed/2)    
         }
 
     return (

@@ -28,6 +28,10 @@ const Board = (prop) => {
           }
     }, [])
 
+    const deleteDrops = () => {
+        // Clear drops[]
+    }
+
     useEffect(() => {
         const keyDown = (event) => {
             setGameState('true');
@@ -49,6 +53,11 @@ const Board = (prop) => {
     }, speed)
 
     let drops = [];
+    
+    console.log("drops before: ", drops);
+    console.log("drops before length: ", drops.length);
+    console.log("First element of drops before: ", drops[0]);
+    
     for (let i = 0; i < dropCount; i++){
         // setDropsArray([...dropsArray, <Drop 
                 
@@ -63,7 +72,7 @@ const Board = (prop) => {
         //         setScore={setScore} 
         //         user={user}/>])
         drops.push(<Drop 
-            drops={drops}
+           
             setDropCount={setDropCount} 
             setRestart={prop.setRestart} 
             restart={prop.restart} 
@@ -76,10 +85,13 @@ const Board = (prop) => {
             user={user}/>)
 }
 
+console.log("First drop after: ", drops[0]);
+
 useEffect(()=> {
     setScore(0)
     // setDropsArray([])
     console.log('inside prop gamestate useeffect', drops)
+    // drops = []
     drops.fill([])
     drops.flat(Infinity);
     
