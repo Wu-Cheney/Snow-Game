@@ -1,0 +1,92 @@
+body {
+    height: 100%;
+    overflow: hidden;
+
+}
+
+div {
+    border-radius: 5px;
+}
+
+li {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    margin:  10px 30px;
+    
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 130px;
+    font-size: 80px;
+    font-weight: bolder;
+    color: rgb(57, 152, 235);
+}
+
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+#leaderboard {
+    height: 620px;
+    width: 350px;
+    background-color: rgb(142, 223, 255);
+    margin-left: 60px;
+    box-shadow: 5px 5px 5px 5px rgb(244, 246, 255);
+
+}
+
+#board {
+    height: 750px;
+    width: 800px;
+    margin-right: 50px;
+    background-color: rgb(176, 242, 255);
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    box-shadow: 5px 5px 5px 5px rgb(244, 249, 255);
+}
+
+#score {
+    position: absolute;
+    font-size: 50px;
+    z-index: 1000;
+    margin-left: 140px;
+   
+}
+#player {
+    position: absolute;
+    bottom: 0;
+     /* left: 350px; */
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+}
+
+.drop{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: lightcyan;
+    z-index: -5;
+    
+}
+
