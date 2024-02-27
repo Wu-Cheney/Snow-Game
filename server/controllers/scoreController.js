@@ -3,13 +3,9 @@ const db = require('../models/leaderboardModel');
 const scoreController = {};
 
 scoreController.getScores = async (req, res, next) => {
-  console.log('in score controller');
   try {
-    console.log('in score controller');
     const queryStr = 'SELECT * FROM leaderboard ORDER BY score DESC LIMIT 10';
     const scores = await db.query(queryStr);
-    console.log(scores);
-
     res.locals.scores = scores.rows;
     console.log('this is scores', scores);
 
@@ -27,7 +23,6 @@ scoreController.sendScore = async (req, res, next) => {
       values: [entry.name, entry.score],
     };
     const sentEntry = await db.query(queryObj);
-    console.log('sentEntry', sentEntry);
     return next();
   } catch {
     next({ log: 'error in sendScore' });

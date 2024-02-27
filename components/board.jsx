@@ -9,10 +9,6 @@ const Board = (prop) => {
     const [leftPosition, moveLeftPosition] = useState(300);
     const [speed, setSpeed] = useState(500);
     const [user, setUser] = useState('')
-   
-    
-    
-
 
     useEffect(()=> {
         let person = prompt('Please enter your name', '');
@@ -28,8 +24,6 @@ const Board = (prop) => {
           }
     }, [])
 
-    
-
     useEffect(() => {
         const keyDown = (event) => {
             setGameState('true');
@@ -40,7 +34,7 @@ const Board = (prop) => {
         return function cleanup() {
             document.removeEventListener('keydown', keyDown);
         }
-}, [gameState]);
+    }, [gameState]);
     
 
     setTimeout(()=> {
@@ -53,7 +47,6 @@ const Board = (prop) => {
     let drops = [];
     
     for (let i = 0; i < dropCount; i++){
-        
         drops.push(<Drop 
             setDropCount={setDropCount} 
             setRestart={prop.setRestart} 
@@ -65,13 +58,12 @@ const Board = (prop) => {
             score={score} 
             setScore={setScore} 
             user={user}/>)
-}
+    }
 
 
-useEffect(()=> {
-    setScore(0)
-    console.log('inside prop gamestate useeffect', drops)
-},[gameState])
+    useEffect(()=> {
+        setScore(0)
+    },[gameState])
 
     return (
         <div id="board">
